@@ -22,10 +22,10 @@ Generating and detecting deep-fakes of political figures
   - Crude eyes binary masks are also generated and saved in `./faces/binary_masks_eyes`. These binary masks can serve as a suboptimal alternative to masks generated through [prep_binary_masks.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/prep_binary_masks.ipynb). 
   
 **Usage**
-1. Run [MTCNN_video_face_detection_alignment.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/MTCNN_video_face_detection_alignment.ipynb) to extract faces from videos. Manually move/rename the aligned face images into `./faceA/` or `./faceB/` folders.
-2. Run [prep_binary_masks.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/prep_binary_masks.ipynb) to generate binary masks of training images. 
+1. Run [MTCNN_video_face_detection_alignment.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/MTCNN_video_face_detection_alignment.ipynb) to extract faces from videos. The output is a series of 80x80 jpeg frames centered on the subjects' face. Manually move/rename the aligned face images into `./faceA/` or `./faceB/` folders.
+2. Run [prep_binary_masks.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/prep_binary_masks.ipynb) to generate 256x256 jpeg binary masks of the eyes of training images. 
     - You can skip this pre-processing step by (1) setting `use_bm_eyes=False` in the config cell of the train_test notebook, or (2) use low-quality binary masks generated in step 1.
-3. Run [FaceSwap_GAN_v2.2_train_test.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_train_test.ipynb) to train  models.
+3. Run [FaceSwap_GAN_v2.2_train_test.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_train_test.ipynb) to train  models. It will likely take several days to finish 40,000 iterations. If you receive an Out of Memory error, reduce the batch size (must be an even number).
 4. Run  [FaceSwap_GAN_v2.2_video_conversion.ipynb](https://github.com/shaoanlu/faceswap-GAN/blob/master/FaceSwap_GAN_v2.2_video_conversion.ipynb) to create videos using the trained models in step 3. 
 
 ### Training data format 
