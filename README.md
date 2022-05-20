@@ -34,6 +34,10 @@ Generating and detecting deep-fakes of political figures
 
 ## Generative adversarial networks for face swapping
 ### 1. Architecture
+  - GAN with a denoising Autoencoder as the generator
+  - Binary classifier adversary
+  - Feedforward neural network
+
   ![enc_arch3d](https://www.dropbox.com/s/b43x8bv5xxbo5q0/enc_arch3d_resized2.jpg?raw=1)
   
   ![dec_arch3d](https://www.dropbox.com/s/p09ioztjcxs66ey/dec_3arch3d_resized.jpg?raw=1)
